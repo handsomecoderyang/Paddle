@@ -170,6 +170,12 @@ if(WITH_DISTRIBUTE)
       set(PYBIND_DEPS ${PYBIND_DEPS} nvshmem)
     endif()
   endif()
+  if(WITH_MACA)
+    set(PYBIND_DEPS ${PYBIND_DEPS} deep_ep_maca)
+    set(PYBIND_SRCS ${PYBIND_SRCS} deep_ep_api.cc)
+    add_definitions(-DPADDLE_WITH_DEEP_EP)
+    add_definitions(-DPADDLE_WITH_DEEP_EP_MACA)  # 新增宏区分
+  endif()
 endif()
 
 if(NOT WITH_SHARED_IR)

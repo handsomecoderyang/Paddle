@@ -26,9 +26,9 @@ import paddle.distributed as dist
 from paddle.base.core import (
     Buffer as CppBuffer,
     Config,
-    get_low_latency_nvl_size_hint_two_stage,
-    get_low_latency_rdma_size_hint,
-    get_low_latency_rdma_size_hint_two_stage,
+    # get_low_latency_nvl_size_hint_two_stage,
+    # get_low_latency_rdma_size_hint,
+    # get_low_latency_rdma_size_hint_two_stage,
 )
 
 if TYPE_CHECKING:

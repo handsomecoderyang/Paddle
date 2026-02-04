@@ -1070,6 +1070,10 @@ if (
     and '@WITH_XPU_XRE5@' == 'ON'
 ):
     packages.extend(['paddle.distributed.communication.deep_ep'])
+if (
+    '@WITH_MACA@' == 'ON'
+):
+    packages.extend(['paddle.distributed.communication.deep_ep'])
 
 if (
     '@WITH_GPU@' == 'ON'

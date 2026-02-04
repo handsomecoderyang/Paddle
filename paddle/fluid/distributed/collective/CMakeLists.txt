@@ -16,6 +16,12 @@ if(WITH_DISTRIBUTE
   set(DEEPEP_LIB deep_ep_xpu)
 endif()
 
+if(WITH_DISTRIBUTE AND WITH_MACA)
+  message(STATUS "Enable DeepEP alltoall communication for CustomDevice.")
+  add_subdirectory(deep_ep_maca)  # 你的 CustomDevice 实现目录
+  set(DEEPEP_LIB deep_ep_maca)
+endif()
+
 cc_library(
   process_group
   SRCS process_group.cc
